@@ -201,9 +201,9 @@ class Twitter {
    * @private
    */
   _makeRequest(method, resource, parameters) {
-    let url = `${this.url}/${resource}`
-    if (this.version !== "2") {
-      url = `${this.url}/${resource}.json`
+    let url = `${this.url}/${resource}`;
+    if (this.version !== '2') {
+      url = `${this.url}/${resource}.json`;
     }
     const requestData = {
       url: url,
