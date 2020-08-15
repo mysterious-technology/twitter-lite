@@ -73,6 +73,7 @@ class Twitter {
       secret: config.access_token_secret,
     };
 
+    this.version = config.version;
     this.url = getUrl(config.subdomain, config.version);
     this.oauth = getUrl(config.subdomain, 'oauth');
     this.config = config;
@@ -200,8 +201,12 @@ class Twitter {
    * @private
    */
   _makeRequest(method, resource, parameters) {
+    let url = `${this.url}/${resource}`
+    if (this.version !== "2") {
+      url = `${this.url}/${resource}.json`
+    }
     const requestData = {
-      url: `${this.url}/${resource}.json`,
+      url: url,
       method,
     };
     if (parameters)
