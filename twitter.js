@@ -201,7 +201,7 @@ class Twitter {
    */
   _makeRequest(method, resource, parameters) {
     let url = `${this.url}/${resource}`;
-    if (!this.url.endsWith("/2")) {
+    if (!this.url.endsWith('/2')) {
       url = `${this.url}/${resource}.json`;
     }
     const requestData = {
