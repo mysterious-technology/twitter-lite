@@ -239,6 +239,8 @@ class Twitter {
       parameters,
     );
 
+    console.log("url", requestData.url);
+    console.log("headers", JSON.stringify(headers, null, 2));
     return Fetch(requestData.url, { headers })
       .then(Twitter._handleResponse);
   }
